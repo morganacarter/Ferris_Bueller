@@ -19,3 +19,7 @@ with open('nats.csv') as nats_csvfile:
             print "There is an away game today. You can catch it on the local radio affiliate"
     if user_date not in game_dates_list:
         print "There is no Nationals Game today. Do you want to check if there's a Baltimore game?"
+        if user_date == orioles_game[0] and orioles_game[4] == "Camden Yards":
+            print "Okay, great news! The Orioles are playing at home today, you can go up to Baltimore and see them!"
+            print "The game starts at {0} and it is the {1}".format(orioles_game[1],orioles_game[3])
+            print "The current temperature is {0} degrees and the expected forecast is {1}".format(orioles_response["main"]["temp"],orioles_response["weather"][0]["description"])
