@@ -5,7 +5,7 @@ with open('nats.csv') as nats_csvfile:
     nats_response = requests.get("http://api.openweathermap.org/data/2.5/weather?q=Washington,DC&units=imperial&cnt=7").json()
     nats_direction = requests.get("http://api.wmata.com/StationPrediction.svc/json/GetPrediction/E04?api_key=kfgpmgvfgacx98de9q3xazww").json()
     nats_game_list = csv.reader(nats_csvfile)
-    user_date = raw_input("What date are you going to the concert?")
+    user_date = raw_input("What date are you going to the ballpark?")
     nats_game_dates_list = []
     for nats_game in nats_game_list:
         nats_game_dates_list.append(nats_game[0])
@@ -24,7 +24,7 @@ with open('nats.csv') as nats_csvfile:
             orioles_game_list = csv.reader(orioles_csvfile)
             orioles_game_dates_list = []
             for orioles_game in orioles_game_list:
-                orioles_game_dates_list.append(orioles.game[0])
+                orioles_game_dates_list.append(orioles_game[0])
                 if user_date == orioles_game[0] and orioles_game[4] == "Camden Yards":
                     print "Okay, great news! The Orioles are playing at home today, you can go up to Baltimore and see them!"
                     print "The game starts at {0} and it is the {1}".format(orioles_game[1],orioles_game[3])
