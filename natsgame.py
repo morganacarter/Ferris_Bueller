@@ -1,3 +1,5 @@
+#Possible to scrape twitter for games, day of?
+
 import csv
 import requests
 from yelpapi import YelpAPI
